@@ -6,11 +6,10 @@ import java.io.FileInputStream;
 import javazoom.jl.player.Player; //외부 라이브러리 파일을 불러오는게 가능하게 만들어줌
 
 public class MusicPlayer extends Thread {
-	
+
 	private Player player;
 	protected boolean isLoop; // 음악을 틀고 끌 수 있는 trun on/off
-	
-	
+
 	protected void setLoop(boolean isLoop) {
 		this.isLoop = isLoop;
 	}
@@ -31,8 +30,6 @@ public class MusicPlayer extends Thread {
 		}
 
 	}
-	
-	
 
 	@Override
 	public void run() { // run 메서드
@@ -63,17 +60,11 @@ public class MusicPlayer extends Thread {
 		player.close();
 		this.interrupt();
 	}
-	
-/*	public void startbutton() {
-		try {
-			do {
-				player.play();
-				fis = new FileInputStream(file);
-				bis = new BufferedInputStream(fis);
-				player = new Player(bis);
-			} while (isLoop);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}*/
+
+	/*
+	 * public void startbutton() { try { do { player.play(); fis = new
+	 * FileInputStream(file); bis = new BufferedInputStream(fis); player = new
+	 * Player(bis); } while (isLoop); } catch (Exception e) {
+	 * System.out.println(e.getMessage()); } }
+	 */
 }
